@@ -365,20 +365,19 @@ if (Astro.request.method === 'POST') {
 
 ---
 
-## Monorepo Development Commands
+## Contributing & Local Development
+
+We welcome contributions! To test or contribute to the PKPay+ SDKs locally:
 
 ```bash
-# 1. Install all dependencies across all packages
+# Clone and install dependencies
 pnpm install
 
-# 2. Build all packages in parallel
-pnpm run build
-
-# 3. Run all test suites
+# Run the test suites
 pnpm test
 
-# 4. Publish all packages to NPM
-pnpm -r publish --access public
+# Build all packages locally
+pnpm run build
 ```
 
 ---
