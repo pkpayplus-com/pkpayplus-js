@@ -15,7 +15,7 @@ Install the dedicated package designed specifically for your stack — no confus
 | Framework / Runtime | Package to Install | Primary Use Case |
 | :--- | :--- | :--- |
 | **Next.js** | `npm i @pkpayplus/nextjs` | App Router, Server Actions, Route Handlers, React 19 Client UI |
-| **Node.js / Express / NestJS** | `npm i @pkpayplus/node` | Backend APIs, server verification, products, prices, webhooks |
+| **Node.js / Express / NestJS** | `npm i @pkpayplus/node` | Backend APIs, server session verification, products, prices |
 | **React** | `npm i @pkpayplus/react` | React 19 SPA, Vite, Remix, CRA |
 | **Vue** | `npm i @pkpayplus/vue` | Vue 3 & Nuxt 3 composables (`usePKPayPlus`) & plugin |
 | **Svelte** | `npm i @pkpayplus/svelte` | Svelte 4 & 5, SvelteKit runes and stores |
@@ -38,7 +38,6 @@ Environment variables (`.env.local`):
 PKPAY_SECRET_KEY=sk_live_xxxxxx
 PKPAY_MERCHANT_ID=8f7e6d5c-xxxx-xxxx
 NEXT_PUBLIC_PKPAY_KEY=pk_live_xxxxxx
-PKPAY_WEBHOOK_SECRET=whsec_xxxxxx
 ```
 
 #### Server Action (`app/actions/checkout.ts`):
@@ -113,19 +112,25 @@ export default function CheckoutPage() {
 }
 ```
 
-#### Webhook Route Handler (`app/api/webhook/pkpay/route.ts`):
+#### Server Route Handler for Verification (`app/api/checkout/verify/route.ts`):
 ```typescript
-import { createWebhookHandler } from '@pkpayplus/nextjs/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { pkpayServer } from '@pkpayplus/nextjs/server';
 
-export const POST = createWebhookHandler({
-  onPaymentSuccess: async (event) => {
-    console.log(`Payment confirmed: ${event.session_id}`);
-    // e.g. update your Prisma/Drizzle database
-  },
-  onPaymentFailed: async (event) => {
-    console.log(`Payment failed: ${event.session_id}`);
-  },
-});
+export async function POST(req: NextRequest) {
+  try {
+    const { sessionId } = await req.json();
+    const session = await pkpayServer.checkoutSessions.verify(sessionId);
+    return NextResponse.json({
+      status: session.status,
+      paymentStatus: session.payment_status,
+      amount: session.amount,
+      currency: session.currency,
+    });
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 400 });
+  }
+}
 ```
 
 ---
@@ -183,22 +188,20 @@ const eurPrice = await pkpay.prices.create(product.id, {
 const list = await pkpay.products.list({ page: 1, per_page: 10 });
 ```
 
-#### Webhooks Verification:
+#### Server Session Verification:
 ```typescript
-app.post('/api/webhook', express.raw({ type: 'application/json' }), (req, res) => {
+app.post('/api/checkout/verify', express.json(), async (req, res) => {
   try {
-    const event = pkpay.webhooks.constructEvent({
-      payload: req.body,
-      signatureHeader: req.headers['x-pkpayplus-signature'] as string,
-      webhookSecret: process.env.PKPAY_WEBHOOK_SECRET!,
+    const { sessionId } = req.body;
+    const session = await pkpay.checkoutSessions.verify(sessionId);
+    res.json({
+      status: session.status,
+      paymentStatus: session.payment_status,
+      amount: session.amount,
+      currency: session.currency,
     });
-
-    if (event.event === 'payment.succeeded') {
-      console.log('Payment success:', event.session_id);
-    }
-    res.json({ received: true });
   } catch (err: any) {
-    res.status(400).send(`Webhook Error: ${err.message}`);
+    res.status(400).json({ error: err.message });
   }
 });
 ```
