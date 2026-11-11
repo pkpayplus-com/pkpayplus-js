@@ -1,0 +1,45 @@
+{
+  "name": "@pkpayplus/svelte",
+  "version": "1.0.0",
+  "description": "Official PKPay+ Svelte 4 & 5 SDK",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "peerDependencies": {
+    "svelte": ">=4.0.0 || ^5.0.0"
+  },
+  "dependencies": {
+    "@pkpayplus/core": "workspace:*"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist"
+  },
+  "author": "PKPay+",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "rimraf": "^6.0.1",
+    "svelte": "^5.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}
+

@@ -1,0 +1,31 @@
+{
+  "name": "pkpayplus-sdk-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for PKPay+ SDK ecosystem (@pkpayplus/core, @pkpayplus/node, @pkpayplus/react, @pkpayplus/nextjs, @pkpayplus/vue, @pkpayplus/svelte, @pkpayplus/astro)",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --filter \"./packages/*\" build",
+    "dev": "pnpm -r --parallel dev",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "clean": "pnpm -r exec rimraf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "happy-dom": "^15.11.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

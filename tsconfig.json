@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pkpayplus/core": ["./packages/core/src/index.ts"],
+      "@pkpayplus/node": ["./packages/node/src/index.ts"],
+      "@pkpayplus/react": ["./packages/react/src/index.ts"],
+      "@pkpayplus/nextjs": ["./packages/nextjs/src/index.ts"],
+      "@pkpayplus/nextjs/server": ["./packages/nextjs/src/server.ts"],
+      "@pkpayplus/nextjs/client": ["./packages/nextjs/src/client.tsx"],
+      "@pkpayplus/vue": ["./packages/vue/src/index.ts"],
+      "@pkpayplus/svelte": ["./packages/svelte/src/index.ts"],
+      "@pkpayplus/astro": ["./packages/astro/src/index.ts"],
+      "@pkpayplus/sdk": ["./packages/sdk/src/index.ts"]
+    }
+  },
+  "include": ["packages/*/src/**/*", "tests/**/*"],
+  "exclude": ["node_modules", "**/dist"]
+}
