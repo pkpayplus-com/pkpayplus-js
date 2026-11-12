@@ -1,8 +1,4 @@
-import {
-  HTTPClient,
-  type PKPayPlusServerOptions,
-  Webhooks,
-} from '@pkpayplus/core';
+import { HTTPClient, type PKPayPlusServerOptions, Webhooks } from '@pkpayplus/core';
 import { CheckoutSessionsResource } from './resources/checkoutSessions';
 import { PaymentLinksResource } from './resources/paymentLinks';
 import { PricesResource } from './resources/prices';
@@ -45,4 +41,3 @@ export * from './resources/prices';
 export * from './resources/products';
 
 export default PKPayPlus;
-

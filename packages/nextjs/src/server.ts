@@ -1,5 +1,5 @@
-import { PKPayPlus } from '@pkpayplus/node';
 import type { PKPayPlusServerOptions, PKPayPlusWebhookEvent } from '@pkpayplus/core';
+import { PKPayPlus } from '@pkpayplus/node';
 
 let serverInstance: PKPayPlus | null = null;
 
@@ -52,7 +52,7 @@ export interface WebhookHandlerOptions {
  * Drop-in App Router Route Handler for Next.js (app/api/webhook/pkpay/route.ts)
  */
 export function createWebhookHandler(options?: WebhookHandlerOptions) {
-  return async function POST(req: Request): Promise<Response> {
+  return async function handleWebhook(req: Request): Promise<Response> {
     try {
       const webhookSecret = options?.webhookSecret || process.env.PKPAY_WEBHOOK_SECRET;
       if (!webhookSecret) {
@@ -99,4 +99,3 @@ export function createWebhookHandler(options?: WebhookHandlerOptions) {
 }
 
 export * from '@pkpayplus/node';
-

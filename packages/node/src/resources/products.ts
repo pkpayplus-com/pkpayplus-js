@@ -46,7 +46,9 @@ export class ProductsResource {
   }
 
   public async delete(id: string): Promise<{ success: boolean; message?: string }> {
-    return this.client.request<{ success: boolean; message?: string }>('DELETE', `merchant-api/products/${id}`);
+    return this.client.request<{ success: boolean; message?: string }>(
+      'DELETE',
+      `merchant-api/products/${id}`
+    );
   }
 }
-

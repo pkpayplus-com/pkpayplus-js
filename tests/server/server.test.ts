@@ -1,5 +1,9 @@
+import {
+  PKPayPlus,
+  PKPayPlusAuthenticationError,
+  PKPayPlusInvalidRequestError,
+} from '@pkpayplus/node';
 import { describe, expect, it } from 'vitest';
-import { PKPayPlus, PKPayPlusAuthenticationError, PKPayPlusInvalidRequestError } from '@pkpayplus/node';
 
 describe('PKPayPlus Server SDK Initialization', () => {
   it('initializes successfully with secretKey and merchantId', () => {
@@ -31,4 +35,3 @@ describe('PKPayPlus Server SDK Initialization', () => {
     }).toThrow(PKPayPlusInvalidRequestError);
   });
 });
-

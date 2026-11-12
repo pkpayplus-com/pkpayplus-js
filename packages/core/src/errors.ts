@@ -47,4 +47,3 @@ export class PKPayPlusSecurityError extends PKPayPlusError {
     this.name = 'PKPayPlusSecurityError';
   }
 }
-

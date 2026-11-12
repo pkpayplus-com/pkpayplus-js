@@ -1,5 +1,5 @@
-import type { DialogController, OpenDialogOptions } from './types';
 import { setupPostMessageListener } from './events';
+import type { DialogController, OpenDialogOptions } from './types';
 
 const DIALOG_STYLE_ID = 'pkpayplus-dialog-styles';
 
@@ -98,7 +98,9 @@ function injectDialogStyles(): void {
 
 export function createCheckoutDialog(options: OpenDialogOptions): DialogController {
   if (typeof document === 'undefined') {
-    throw new Error('createCheckoutDialog can only be invoked in a browser environment with window and document.');
+    throw new Error(
+      'createCheckoutDialog can only be invoked in a browser environment with window and document.'
+    );
   }
 
   injectDialogStyles();
@@ -187,4 +189,3 @@ export function createCheckoutDialog(options: OpenDialogOptions): DialogControll
     container: overlay,
   };
 }
-

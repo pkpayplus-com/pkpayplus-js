@@ -13,4 +13,3 @@ export default defineConfig({
     js: '"use client";',
   },
 });
-

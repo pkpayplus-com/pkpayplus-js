@@ -2,6 +2,9 @@
   "name": "@pkpayplus/svelte",
   "version": "1.0.0",
   "description": "Official PKPay+ Svelte 4 & 5 SDK",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -42,4 +45,3 @@
     "typescript": "^5.7.2"
   }
 }
-

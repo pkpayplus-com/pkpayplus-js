@@ -1,11 +1,11 @@
-import type { App, InjectionKey } from 'vue';
-import { inject } from 'vue';
 import {
   createCheckoutDialog,
   type DialogController,
   type OpenDialogOptions,
   type PKPayPlusClientOptions,
 } from '@pkpayplus/core';
+import type { App, InjectionKey } from 'vue';
+import { inject } from 'vue';
 
 export const PKPAYPLUS_KEY: InjectionKey<PKPayPlusClientOptions> = Symbol('PKPAYPLUS_KEY');
 

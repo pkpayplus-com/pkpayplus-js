@@ -13,17 +13,27 @@ export class PricesResource {
     return this.client.request<Price[]>('GET', `merchant-api/products/${productId}/prices`);
   }
 
-  public async update(productId: string, priceId: string, params: Partial<CreatePriceParams>): Promise<Price> {
-    return this.client.request<Price>('PUT', `merchant-api/products/${productId}/prices/${priceId}`, {
-      body: params,
-    });
+  public async update(
+    productId: string,
+    priceId: string,
+    params: Partial<CreatePriceParams>
+  ): Promise<Price> {
+    return this.client.request<Price>(
+      'PUT',
+      `merchant-api/products/${productId}/prices/${priceId}`,
+      {
+        body: params,
+      }
+    );
   }
 
-  public async delete(productId: string, priceId: string): Promise<{ success: boolean; message?: string }> {
+  public async delete(
+    productId: string,
+    priceId: string
+  ): Promise<{ success: boolean; message?: string }> {
     return this.client.request<{ success: boolean; message?: string }>(
       'DELETE',
       `merchant-api/products/${productId}/prices/${priceId}`
     );
   }
 }
-

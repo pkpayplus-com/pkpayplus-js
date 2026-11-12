@@ -1,5 +1,5 @@
-import { useCallback, useRef } from 'react';
 import type { DialogController, OpenDialogOptions } from '@pkpayplus/core';
+import { useCallback, useRef } from 'react';
 import { usePKPayPlusContext } from './context';
 
 export interface UsePKPayPlusReturn {

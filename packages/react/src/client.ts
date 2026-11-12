@@ -1,8 +1,8 @@
 import {
   assertClientKey,
   createCheckoutDialog,
-  detectModeFromKey,
   type DialogController,
+  detectModeFromKey,
   type OpenDialogOptions,
   type PKPayPlusClientOptions,
 } from '@pkpayplus/core';

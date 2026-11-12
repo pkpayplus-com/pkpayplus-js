@@ -168,4 +168,3 @@ export interface DialogController {
   iframe: HTMLIFrameElement;
   container: HTMLDivElement;
 }
-

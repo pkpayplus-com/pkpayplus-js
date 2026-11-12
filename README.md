@@ -12,15 +12,15 @@ Official Node.js, Express, Next.js, React 19, Vue 3, Svelte, and Astro SDKs for 
 
 Install the dedicated package designed specifically for your stack — no confusing subpaths, no framework lock-in:
 
-| Framework / Runtime | Package to Install | Primary Use Case |
-| :--- | :--- | :--- |
-| **Next.js** | `npm i @pkpayplus/nextjs` | App Router, Server Actions, Route Handlers, React 19 Client UI |
-| **Node.js / Express / NestJS** | `npm i @pkpayplus/node` | Backend APIs, server session verification, products, prices |
-| **React** | `npm i @pkpayplus/react` | React 19 SPA, Vite, Remix, CRA |
-| **Vue** | `npm i @pkpayplus/vue` | Vue 3 & Nuxt 3 composables (`usePKPayPlus`) & plugin |
-| **Svelte** | `npm i @pkpayplus/svelte` | Svelte 4 & 5, SvelteKit runes and stores |
-| **Astro** | `npm i @pkpayplus/astro` | Astro SSR endpoints & client dialog controllers |
-| **HTML / Static Sites** | *CDN `<script>`* | Drop-in embed for WordPress, Webflow, Shopify |
+| Framework / Runtime            | Package to Install        | Primary Use Case                                               |
+| :----------------------------- | :------------------------ | :------------------------------------------------------------- |
+| **Next.js**                    | `npm i @pkpayplus/nextjs` | App Router, Server Actions, Route Handlers, React 19 Client UI |
+| **Node.js / Express / NestJS** | `npm i @pkpayplus/node`   | Backend APIs, server session verification, products, prices    |
+| **React**                      | `npm i @pkpayplus/react`  | React 19 SPA, Vite, Remix, CRA                                 |
+| **Vue**                        | `npm i @pkpayplus/vue`    | Vue 3 & Nuxt 3 composables (`usePKPayPlus`) & plugin           |
+| **Svelte**                     | `npm i @pkpayplus/svelte` | Svelte 4 & 5, SvelteKit runes and stores                       |
+| **Astro**                      | `npm i @pkpayplus/astro`  | Astro SSR endpoints & client dialog controllers                |
+| **HTML / Static Sites**        | _CDN `<script>`_          | Drop-in embed for WordPress, Webflow, Shopify                  |
 
 ---
 
@@ -29,11 +29,13 @@ Install the dedicated package designed specifically for your stack — no confus
 ### 1. Next.js App Router (`@pkpayplus/nextjs`)
 
 Install:
+
 ```bash
 npm install @pkpayplus/nextjs
 ```
 
 Environment variables (`.env.local`):
+
 ```env
 PKPAY_SECRET_KEY=sk_live_xxxxxx
 PKPAY_MERCHANT_ID=8f7e6d5c-xxxx-xxxx
@@ -41,6 +43,7 @@ NEXT_PUBLIC_PKPAY_KEY=pk_live_xxxxxx
 ```
 
 #### Server Action (`app/actions/checkout.ts`):
+
 ```typescript
 'use server';
 
@@ -59,6 +62,7 @@ export async function createCheckout(amount: number) {
 ```
 
 #### Client Component (`app/checkout/page.tsx`):
+
 ```tsx
 'use client';
 
@@ -113,6 +117,7 @@ export default function CheckoutPage() {
 ```
 
 #### Server Route Handler for Verification (`app/api/checkout/verify/route.ts`):
+
 ```typescript
 import { NextRequest, NextResponse } from 'next/server';
 import { pkpayServer } from '@pkpayplus/nextjs/server';
@@ -138,11 +143,13 @@ export async function POST(req: NextRequest) {
 ### 2. Node.js / Express / NestJS (`@pkpayplus/node`)
 
 Install:
+
 ```bash
 npm install @pkpayplus/node
 ```
 
 Initialization:
+
 ```typescript
 import { PKPayPlus } from '@pkpayplus/node';
 
@@ -153,6 +160,7 @@ const pkpay = new PKPayPlus({
 ```
 
 #### Checkout Sessions:
+
 ```typescript
 // Create session
 const session = await pkpay.checkoutSessions.create({
@@ -169,6 +177,7 @@ if (verification.status === 'paid') {
 ```
 
 #### Products & Prices:
+
 ```typescript
 // Create Product with default price
 const product = await pkpay.products.create({
@@ -189,6 +198,7 @@ const list = await pkpay.products.list({ page: 1, per_page: 10 });
 ```
 
 #### Server Session Verification:
+
 ```typescript
 app.post('/api/checkout/verify', express.json(), async (req, res) => {
   try {
@@ -211,11 +221,13 @@ app.post('/api/checkout/verify', express.json(), async (req, res) => {
 ### 3. React 19 SPA (`@pkpayplus/react`)
 
 Install:
+
 ```bash
 npm install @pkpayplus/react
 ```
 
 Usage:
+
 ```tsx
 import React, { useState } from 'react';
 import {
@@ -238,14 +250,16 @@ function App() {
       />
 
       {/* 2. Custom button */}
-      <button onClick={async () => {
-        const res = await fetch('/api/checkout', { method: 'POST' });
-        const { iframe_url } = await res.json();
-        openDialog({
-          url: iframe_url,
-          onSuccess: (data) => alert('Payment completed: ' + data.sessionId),
-        });
-      }}>
+      <button
+        onClick={async () => {
+          const res = await fetch('/api/checkout', { method: 'POST' });
+          const { iframe_url } = await res.json();
+          openDialog({
+            url: iframe_url,
+            onSuccess: (data) => alert('Payment completed: ' + data.sessionId),
+          });
+        }}
+      >
         Custom Pay Button
       </button>
     </PKPayPlusProvider>
@@ -258,11 +272,13 @@ function App() {
 ### 4. Vue 3 / Nuxt 3 (`@pkpayplus/vue`)
 
 Install:
+
 ```bash
 npm install @pkpayplus/vue
 ```
 
 Usage:
+
 ```vue
 <script setup lang="ts">
 import { usePKPayPlus } from '@pkpayplus/vue';
@@ -291,11 +307,13 @@ async function handlePay() {
 ### 5. Svelte 4 & 5 (`@pkpayplus/svelte`)
 
 Install:
+
 ```bash
 npm install @pkpayplus/svelte
 ```
 
 Usage:
+
 ```svelte
 <script lang="ts">
   import { usePKPayPlus } from '@pkpayplus/svelte';
@@ -317,11 +335,13 @@ Usage:
 ### 6. Astro (`@pkpayplus/astro`)
 
 Install:
+
 ```bash
 npm install @pkpayplus/astro
 ```
 
 Usage:
+
 ```astro
 ---
 import { getPKPayPlusServer } from '@pkpayplus/astro';

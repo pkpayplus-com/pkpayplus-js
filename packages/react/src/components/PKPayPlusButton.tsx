@@ -1,4 +1,4 @@
-import React, { useState, type ButtonHTMLAttributes } from 'react';
+import React, { type ButtonHTMLAttributes, useState } from 'react';
 import { usePKPayPlus } from '../usePKPayPlus';
 
 export interface PKPayPlusButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -51,7 +51,7 @@ export function PKPayPlusButton({
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json',
+            Accept: 'application/json',
           },
         });
 
@@ -107,4 +107,3 @@ export function PKPayPlusButton({
     </button>
   );
 }
-

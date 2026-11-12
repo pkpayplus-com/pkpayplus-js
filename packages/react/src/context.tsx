@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useMemo, type ReactNode } from 'react';
 import type { EnvironmentMode } from '@pkpayplus/core';
+import React, { createContext, type ReactNode, useContext, useMemo } from 'react';
 import { PKPayPlusClient } from './client';
 
 export interface PKPayPlusContextValue {
@@ -29,11 +29,7 @@ export function PKPayPlusProvider({
     });
   }, [publishableKey, mode, checkoutDomain]);
 
-  return (
-    <PKPayPlusContext.Provider value={{ client }}>
-      {children}
-    </PKPayPlusContext.Provider>
-  );
+  return <PKPayPlusContext.Provider value={{ client }}>{children}</PKPayPlusContext.Provider>;
 }
 
 export function usePKPayPlusContext(): PKPayPlusContextValue {
@@ -43,4 +39,3 @@ export function usePKPayPlusContext(): PKPayPlusContextValue {
   }
   return context;
 }
-

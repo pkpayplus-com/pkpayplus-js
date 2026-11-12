@@ -29,8 +29,8 @@ export class Webhooks {
       typeof payload === 'string'
         ? payload
         : Buffer.isBuffer(payload)
-        ? payload.toString('utf8')
-        : JSON.stringify(payload);
+          ? payload.toString('utf8')
+          : JSON.stringify(payload);
 
     const expectedSignature = createHmac('sha256', webhookSecret)
       .update(payloadString, 'utf8')
@@ -56,9 +56,10 @@ export class Webhooks {
     }
 
     try {
-      const parsed = typeof payload === 'string' || Buffer.isBuffer(payload)
-        ? JSON.parse(payloadString)
-        : payload;
+      const parsed =
+        typeof payload === 'string' || Buffer.isBuffer(payload)
+          ? JSON.parse(payloadString)
+          : payload;
 
       return parsed as PKPayPlusWebhookEvent<T>;
     } catch {
@@ -66,15 +67,17 @@ export class Webhooks {
     }
   }
 
-  public generateSignature(payload: string | Buffer | Record<string, unknown>, secret: string): string {
+  public generateSignature(
+    payload: string | Buffer | Record<string, unknown>,
+    secret: string
+  ): string {
     const payloadString =
       typeof payload === 'string'
         ? payload
         : Buffer.isBuffer(payload)
-        ? payload.toString('utf8')
-        : JSON.stringify(payload);
+          ? payload.toString('utf8')
+          : JSON.stringify(payload);
 
     return createHmac('sha256', secret).update(payloadString, 'utf8').digest('hex');
   }
 }
-

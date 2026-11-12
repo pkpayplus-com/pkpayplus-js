@@ -34,4 +34,3 @@ export class CheckoutSessionsResource {
     return this.verify(sessionId);
   }
 }
-

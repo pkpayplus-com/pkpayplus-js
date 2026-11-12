@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
 import type { DialogController } from '@pkpayplus/core';
+import { useEffect, useRef } from 'react';
 import { usePKPayPlus } from '../usePKPayPlus';
 
 export interface PKPayPlusDialogProps {
@@ -54,4 +54,3 @@ export function PKPayPlusDialog({
 
   return null;
 }
-

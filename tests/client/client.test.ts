@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest';
 import { PKPayPlusSecurityError } from '@pkpayplus/core';
 import { PKPayPlusClient } from '@pkpayplus/react';
+import { describe, expect, it } from 'vitest';
 
 describe('PKPayPlusClient', () => {
   it('initializes correctly with publishableKey', () => {
@@ -34,4 +34,3 @@ describe('PKPayPlusClient', () => {
     }).toThrow(PKPayPlusSecurityError);
   });
 });
-

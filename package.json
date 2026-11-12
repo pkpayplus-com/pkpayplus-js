@@ -14,9 +14,16 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit",
-    "clean": "pnpm -r exec rimraf dist"
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "clean": "pnpm -r exec rimraf dist",
+    "publish:dry-run": "pnpm -r publish --access public --dry-run --no-git-checks",
+    "publish:all": "pnpm -r publish --access public --no-git-checks"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.6.6",
     "@types/node": "^22.10.2",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
