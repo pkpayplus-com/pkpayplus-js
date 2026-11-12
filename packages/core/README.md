@@ -29,4 +29,3 @@ pnpm add @pkpayplus/core
 ## License
 
 MIT © [PKPay+](https://pkpayplus.com)
-

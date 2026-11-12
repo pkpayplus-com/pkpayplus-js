@@ -92,4 +92,3 @@ export function PricingCard() {
 ## License
 
 MIT © [PKPay+](https://pkpayplus.com)
-

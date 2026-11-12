@@ -46,4 +46,3 @@ Include the standalone script tag directly on your webpage:
 ## License
 
 MIT © [PKPay+](https://pkpayplus.com)
-

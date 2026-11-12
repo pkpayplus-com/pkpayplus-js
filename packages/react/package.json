@@ -38,6 +38,15 @@
   },
   "author": "PKPay+",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkpayplus-com/pkpayplus-js.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://github.com/pkpayplus-com/pkpayplus-js#readme",
+  "bugs": {
+    "url": "https://github.com/pkpayplus-com/pkpayplus-js/issues"
+  },
   "devDependencies": {
     "@types/node": "^22.10.2",
     "@types/react": "^19.2.0",
