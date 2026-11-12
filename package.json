@@ -12,6 +12,7 @@
     "url": "https://github.com/pkpayplus-com/pkpayplus-js/issues"
   },
   "type": "module",
+  "packageManager": "pnpm@12.4.2",
   "engines": {
     "node": ">=24.0.0"
   },
