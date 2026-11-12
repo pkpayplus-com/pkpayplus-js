@@ -1,5 +1,5 @@
 {
-  "name": "pkpayplus-sdk-monorepo",
+  "name": "pkpayplus-js",
   "version": "1.0.0",
   "private": true,
   "description": "Official JavaScript/TypeScript SDK monorepo for PKPay+ ecosystem",
@@ -11,6 +11,20 @@
   "bugs": {
     "url": "https://github.com/pkpayplus-com/pkpayplus-js/issues"
   },
+  "keywords": [
+    "pkpayplus",
+    "pkpay",
+    "payment-gateway",
+    "payments",
+    "checkout",
+    "sdk",
+    "nextjs",
+    "react",
+    "vue",
+    "svelte",
+    "astro",
+    "node"
+  ],
   "type": "module",
   "packageManager": "pnpm@12.4.2",
   "engines": {

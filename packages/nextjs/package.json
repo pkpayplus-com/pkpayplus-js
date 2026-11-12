@@ -51,6 +51,16 @@
   },
   "author": "PKPay+",
   "license": "MIT",
+  "keywords": [
+    "pkpayplus",
+    "pkpay",
+    "nextjs",
+    "app-router",
+    "server-actions",
+    "react19",
+    "checkout",
+    "payments"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pkpayplus-com/pkpayplus-js.git",

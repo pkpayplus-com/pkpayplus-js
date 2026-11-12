@@ -35,6 +35,17 @@
   },
   "author": "PKPay+",
   "license": "MIT",
+  "keywords": [
+    "pkpayplus",
+    "pkpay",
+    "sdk",
+    "cdn",
+    "vanilla-js",
+    "checkout",
+    "dialog",
+    "payments",
+    "payment-gateway"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pkpayplus-com/pkpayplus-js.git",
