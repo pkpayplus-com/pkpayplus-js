@@ -1,12 +1,14 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { createCheckoutDialog } from '@pkpayplus/core';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 describe('Client Dialog Controller', () => {
   const originalFetch = globalThis.fetch;
 
   beforeEach(() => {
     // Prevent happy-dom from making real network calls when iframe.src is set
-    globalThis.fetch = vi.fn().mockResolvedValue(new Response('<html><body>Mock Checkout</body></html>'));
+    globalThis.fetch = vi
+      .fn()
+      .mockResolvedValue(new Response('<html><body>Mock Checkout</body></html>'));
   });
 
   afterEach(() => {

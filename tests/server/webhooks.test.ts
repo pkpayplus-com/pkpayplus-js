@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import { PKPayPlusSecurityError, Webhooks } from '@pkpayplus/core';
+import { describe, expect, it } from 'vitest';
 
 describe('Webhooks Resource', () => {
   const webhooks = new Webhooks();
@@ -62,4 +62,3 @@ describe('Webhooks Resource', () => {
     }).toThrow(PKPayPlusSecurityError);
   });
 });
-

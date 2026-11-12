@@ -2,6 +2,9 @@
   "name": "@pkpayplus/node",
   "version": "1.0.0",
   "description": "Official PKPay+ SDK for Node.js, Express, NestJS, and Fastify",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -38,4 +41,3 @@
     "typescript": "^5.7.2"
   }
 }
-

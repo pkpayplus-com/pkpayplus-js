@@ -1,5 +1,5 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { PKPayPlus } from '@pkpayplus/node';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 describe('CheckoutSessions Resource', () => {
   const pkpay = new PKPayPlus({
@@ -46,10 +46,12 @@ describe('CheckoutSessions Resource', () => {
     // Verify fetch was called with the correct route interpolation
     expect(globalThis.fetch).toHaveBeenCalledTimes(1);
     const [calledUrl, calledOptions] = vi.mocked(globalThis.fetch).mock.calls[0];
-    expect(calledUrl).toBe('https://api.test.pkpayplus.com/merchant-api/merch_001/checkout-sessions');
+    expect(calledUrl).toBe(
+      'https://api.test.pkpayplus.com/merchant-api/merch_001/checkout-sessions'
+    );
     expect(calledOptions?.method).toBe('POST');
     expect(calledOptions?.headers).toMatchObject({
-      'Authorization': 'Bearer sk_test_1234567890',
+      Authorization: 'Bearer sk_test_1234567890',
       'Content-Type': 'application/json',
     });
   });
@@ -81,4 +83,3 @@ describe('CheckoutSessions Resource', () => {
     expect(calledOptions?.method).toBe('GET');
   });
 });
-

@@ -17,10 +17,14 @@ export class HTTPClient {
 
   constructor(options: PKPayPlusServerOptions) {
     if (!options?.secretKey) {
-      throw new PKPayPlusAuthenticationError('Missing required "secretKey" in PKPayPlus configuration');
+      throw new PKPayPlusAuthenticationError(
+        'Missing required "secretKey" in PKPayPlus configuration'
+      );
     }
     if (!options?.merchantId) {
-      throw new PKPayPlusInvalidRequestError('Missing required "merchantId" in PKPayPlus configuration');
+      throw new PKPayPlusInvalidRequestError(
+        'Missing required "merchantId" in PKPayPlus configuration'
+      );
     }
 
     assertServerEnvironment();
@@ -67,8 +71,8 @@ export class HTTPClient {
     }
 
     const headers: Record<string, string> = {
-      'Authorization': `Bearer ${this.secretKey}`,
-      'Accept': 'application/json',
+      Authorization: `Bearer ${this.secretKey}`,
+      Accept: 'application/json',
       'PKPayPlus-Version': '2026-10-01',
       ...(options?.headers || {}),
     };
@@ -124,10 +128,12 @@ export class HTTPClient {
           if (isAbort) {
             throw new PKPayPlusAPIConnectionError(`Request timed out after ${this.timeout}ms`);
           }
-          throw new PKPayPlusAPIConnectionError((err as Error)?.message || 'Network request failed');
+          throw new PKPayPlusAPIConnectionError(
+            (err as Error)?.message || 'Network request failed'
+          );
         }
 
-        const delay = Math.min(100 * Math.pow(2, attempts - 1) + Math.random() * 50, 2000);
+        const delay = Math.min(100 * 2 ** (attempts - 1) + Math.random() * 50, 2000);
         await new Promise((resolve) => setTimeout(resolve, delay));
       }
     }
@@ -140,8 +146,8 @@ export class HTTPClient {
       typeof data === 'object' && data !== null && 'message' in data
         ? String((data as { message: unknown }).message)
         : typeof data === 'object' && data !== null && 'error' in data
-        ? String((data as { error: unknown }).error)
-        : `Request failed with HTTP status ${status}`;
+          ? String((data as { error: unknown }).error)
+          : `Request failed with HTTP status ${status}`;
 
     if (status === 401) {
       throw new PKPayPlusAuthenticationError(message);
@@ -156,4 +162,3 @@ export class HTTPClient {
     throw new PKPayPlusError(message, { statusCode: status, raw: data });
   }
 }
-

@@ -1,5 +1,5 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { PKPayPlus } from '@pkpayplus/node';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 describe('Products & Prices Resource', () => {
   const pkpay = new PKPayPlus({
@@ -74,4 +74,3 @@ describe('Products & Prices Resource', () => {
     expect(calledUrl).toBe('https://api.test.pkpayplus.com/merchant-api/products/prod_101/prices');
   });
 });
-

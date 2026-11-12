@@ -2,6 +2,9 @@
   "name": "@pkpayplus/astro",
   "version": "1.0.0",
   "description": "Official PKPay+ Astro SDK for server and client integrations",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -39,4 +42,3 @@
     "typescript": "^5.7.2"
   }
 }
-

@@ -2,6 +2,9 @@
   "name": "@pkpayplus/vue",
   "version": "1.0.0",
   "description": "Official PKPay+ Vue 3 SDK with composables",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -42,4 +45,3 @@
     "vue": "^3.5.0"
   }
 }
-

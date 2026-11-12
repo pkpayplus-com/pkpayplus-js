@@ -1,8 +1,8 @@
-import React from 'react';
 import {
   PKPayPlusProvider as BasePKPayPlusProvider,
   type PKPayPlusProviderProps,
 } from '@pkpayplus/react';
+import type React from 'react';
 
 export function PKPayPlusProvider({
   publishableKey,
@@ -22,4 +22,3 @@ export function PKPayPlusProvider({
 }
 
 export * from '@pkpayplus/react';
-

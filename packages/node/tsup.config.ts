@@ -9,4 +9,3 @@ export default defineConfig({
   clean: true,
   target: 'node24',
 });
-

@@ -16,7 +16,11 @@ export function setupPostMessageListener(handlers: PostMessageHandlers): () => v
   }
 
   const listener = (event: MessageEvent) => {
-    if (expectedOrigin && event.origin !== expectedOrigin && !event.origin.includes('pkpayplus.com')) {
+    if (
+      expectedOrigin &&
+      event.origin !== expectedOrigin &&
+      !event.origin.includes('pkpayplus.com')
+    ) {
       return;
     }
 
@@ -69,4 +73,3 @@ export function setupPostMessageListener(handlers: PostMessageHandlers): () => v
     window.removeEventListener('message', listener);
   };
 }
-
