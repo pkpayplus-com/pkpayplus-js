@@ -6,3 +6,6 @@ coverage/
 
 # Internal architecture & planning documents
 NPM_PACKAGE_PKPAYPLUS.md
+WEEKLY_MAINTENANCE_CHECKLIST.md
+.agent/
+.agents/
