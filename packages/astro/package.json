@@ -35,6 +35,15 @@
   },
   "author": "PKPay+",
   "license": "MIT",
+  "keywords": [
+    "pkpayplus",
+    "pkpay",
+    "astro",
+    "ssr",
+    "checkout",
+    "dialog",
+    "payments"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pkpayplus-com/pkpayplus-js.git",

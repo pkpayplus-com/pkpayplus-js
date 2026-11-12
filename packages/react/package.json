@@ -38,6 +38,18 @@
   },
   "author": "PKPay+",
   "license": "MIT",
+  "keywords": [
+    "pkpayplus",
+    "pkpay",
+    "react",
+    "react19",
+    "checkout",
+    "dialog",
+    "hooks",
+    "components",
+    "payments",
+    "payment-button"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pkpayplus-com/pkpayplus-js.git",
