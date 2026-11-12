@@ -37,6 +37,15 @@
   },
   "author": "PKPay+",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkpayplus-com/pkpayplus-js.git",
+    "directory": "packages/svelte"
+  },
+  "homepage": "https://github.com/pkpayplus-com/pkpayplus-js#readme",
+  "bugs": {
+    "url": "https://github.com/pkpayplus-com/pkpayplus-js/issues"
+  },
   "devDependencies": {
     "@types/node": "^22.10.2",
     "rimraf": "^6.0.1",

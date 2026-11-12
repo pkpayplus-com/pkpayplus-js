@@ -49,4 +49,3 @@ pnpm add @pkpayplus/svelte
 ## License
 
 MIT © [PKPay+](https://pkpayplus.com)
-
