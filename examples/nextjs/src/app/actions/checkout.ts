@@ -1,7 +1,7 @@
 'use server';
 
 import { pkpayServer } from '@pkpayplus/nextjs/server';
-import type { Product } from '@pkpayplus/core';
+import type { Product } from '@pkpayplus/nextjs';
 import { redirect } from 'next/navigation';
 
 export interface CheckoutResult {
