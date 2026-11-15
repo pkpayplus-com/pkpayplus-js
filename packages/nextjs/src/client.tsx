@@ -10,11 +10,11 @@ export function PKPayPlusProvider({
 }: Partial<PKPayPlusProviderProps> & { children: React.ReactNode }): React.JSX.Element {
   const resolvedKey =
     publishableKey ||
-    (typeof process !== 'undefined' ? process.env?.NEXT_PUBLIC_PKPAY_KEY : undefined);
+    (typeof process !== 'undefined' ? process.env?.NEXT_PUBLIC_PKPAY_PUBLISHABLE_KEY : undefined);
 
   if (!resolvedKey) {
     throw new Error(
-      '[PKPayPlus Next.js Error]: Missing publishableKey prop or NEXT_PUBLIC_PKPAY_KEY environment variable.'
+      '[PKPayPlus Next.js Error]: Missing publishableKey prop or NEXT_PUBLIC_PKPAY_PUBLISHABLE_KEY environment variable.'
     );
   }
 

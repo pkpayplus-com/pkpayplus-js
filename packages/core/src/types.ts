@@ -157,6 +157,8 @@ export interface PKPayPlusClientOptions {
 
 export interface OpenDialogOptions {
   url: string;
+  customer?: CustomerInfo;
+  showCustomerForm?: boolean;
   onLoaded?: () => void;
   onSuccess?: (data: { sessionId: string; [key: string]: unknown }) => void;
   onCancel?: () => void;
@@ -167,4 +169,5 @@ export interface DialogController {
   close: () => void;
   iframe: HTMLIFrameElement;
   container: HTMLDivElement;
+  updateCustomer?: (customer: Partial<CustomerInfo>) => void;
 }

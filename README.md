@@ -41,7 +41,7 @@ Environment variables (`.env.local`):
 ```env
 PKPAY_SECRET_KEY=sk_live_xxxxxx
 PKPAY_MERCHANT_ID=8f7e6d5c-xxxx-xxxx
-NEXT_PUBLIC_PKPAY_KEY=pk_live_xxxxxx
+NEXT_PUBLIC_PKPAY_PUBLISHABLE_KEY=pk_live_xxxxxx
 ```
 
 #### Server Action (`app/actions/checkout.ts`):
