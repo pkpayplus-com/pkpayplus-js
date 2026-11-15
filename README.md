@@ -42,6 +42,7 @@ Environment variables (`.env.local`):
 PKPAY_SECRET_KEY=sk_live_xxxxxx
 PKPAY_MERCHANT_ID=8f7e6d5c-xxxx-xxxx
 NEXT_PUBLIC_PKPAY_PUBLISHABLE_KEY=pk_live_xxxxxx
+NEXT_PUBLIC_APP_URL=https://your-domain.com # or http://localhost:3000 for local development
 ```
 
 #### Server Action (`app/actions/checkout.ts`):

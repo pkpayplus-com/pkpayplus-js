@@ -82,9 +82,16 @@ PKPAY_MERCHANT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 # Public key for client-side dialog initialization
 NEXT_PUBLIC_PKPAY_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
 
-# Base URL for redirects (default: http://localhost:3000)
+# Base URL for redirects (default: http://localhost:3000, or your production URL like https://your-app.vercel.app)
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
+
+| Variable | Required | Description |
+| :--- | :---: | :--- |
+| `PKPAY_SECRET_KEY` | **Yes** | Server-side secret key (`sk_live_...` or `sk_test_...`) used by `pkpayServer` for authenticated actions. |
+| `PKPAY_MERCHANT_ID` | **Yes** | Merchant UUID from your PKPay+ Dashboard settings. |
+| `NEXT_PUBLIC_PKPAY_PUBLISHABLE_KEY` | **Yes** | Client publishable key (`pk_live_...` or `pk_test_...`) for checkout dialog initialization. |
+| `NEXT_PUBLIC_APP_URL` | **Yes** | Base domain URL (e.g. `https://your-app.vercel.app` in production or `http://localhost:3000` in dev). Used by Server Actions to construct the return URLs (`/checkout/success`, `/checkout/cancel`). |
 
 > **Note**: If run without `.env.local`, the store opens in **Preview Mode** displaying sample products so you can test the UI layout immediately.
 
