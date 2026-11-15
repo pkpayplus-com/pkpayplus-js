@@ -1,6 +1,6 @@
 'use client';
 
-import { PKPayPlusProvider } from '@pkpayplus/react';
+import { PKPayPlusProvider } from '@pkpayplus/nextjs';
 import type React from 'react';
 
 export function Providers({ children }: { children: React.ReactNode }) {

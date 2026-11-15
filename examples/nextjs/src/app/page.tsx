@@ -1,5 +1,5 @@
 import { pkpayServer } from '@pkpayplus/nextjs/server';
-import type { Product } from '@pkpayplus/core';
+import type { Product } from '@pkpayplus/nextjs';
 import { ProductCard } from '@/components/ProductCard';
 import { Badge } from '@/components/ui/badge';
 
