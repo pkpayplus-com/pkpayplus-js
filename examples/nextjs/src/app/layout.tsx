@@ -34,7 +34,7 @@ export default function RootLayout({
   const mode = isTestKey ? 'test' : 'live';
 
   return (
-    <html lang="en" className={cn("font-mono", inter.variable, interHeading.variable, geistMono.variable)}>
+    <html lang="en" className={cn("font-sans", inter.variable, interHeading.variable, geistMono.variable)}>
       <body className="min-h-screen flex flex-col bg-background text-foreground antialiased font-sans">
         <Navbar isConfigured={isConfigured} mode={mode} />
         <Providers>
@@ -47,7 +47,7 @@ export default function RootLayout({
             <span>© {new Date().getFullYear()} PKPay+ Store</span>
             <div className="flex items-center gap-4">
               <Link
-                href="https://dashboard.pkpayplus.com"
+                href="https://merchant.pkpayplus.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-foreground transition-colors"

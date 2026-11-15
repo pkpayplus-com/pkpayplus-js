@@ -34,6 +34,7 @@ export function setupPostMessageListener(handlers: PostMessageHandlers): () => v
     switch (eventType) {
       case 'pkpayplus:loaded':
       case 'pkpay:loaded':
+      case 'pkplusPaymentIsReady':
         handlers.onLoaded?.();
         break;
 
@@ -41,8 +42,9 @@ export function setupPostMessageListener(handlers: PostMessageHandlers): () => v
       case 'pkpayplus:success':
       case 'pkpay:completed':
       case 'payment.succeeded':
+      case 'paymentSuccess':
         handlers.onSuccess?.({
-          sessionId: payload.sessionId || payload.session_id || payload.data?.sessionId || '',
+          sessionId: payload.sessionId || payload.session_id || payload.data?.sessionId || payload.data?.session_id || '',
           ...(payload.data || {}),
         });
         break;
@@ -55,6 +57,7 @@ export function setupPostMessageListener(handlers: PostMessageHandlers): () => v
 
       case 'pkpayplus:error':
       case 'pkpay:error':
+      case 'paymentError':
         handlers.onError?.({
           message: payload.message || payload.error?.message || 'Payment failed',
           code: payload.code || payload.error?.code,
