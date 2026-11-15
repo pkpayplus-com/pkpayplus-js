@@ -16,7 +16,7 @@ export function createCheckoutDialog(options: OpenDialogOptions): DialogControll
   document.body.style.overflow = 'hidden';
 
   const overlay = document.createElement('div');
-  overlay.className = 'pkpay-overlay';
+  overlay.className = 'pkpay-overlay pkpayplus-overlay';
 
   const dialog = document.createElement('div');
   dialog.className = 'pkpay-dialog';

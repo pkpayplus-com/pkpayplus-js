@@ -1,6 +1,6 @@
 {
   "name": "@pkpayplus/react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official PKPay+ React 19 SDK with hooks and components",
   "publishConfig": {
     "access": "public"

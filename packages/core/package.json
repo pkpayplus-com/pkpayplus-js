@@ -1,6 +1,6 @@
 {
   "name": "@pkpayplus/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Core universal engine and primitives for PKPay+ SDKs",
   "publishConfig": {
     "access": "public"

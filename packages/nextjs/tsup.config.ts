@@ -12,7 +12,7 @@ export default defineConfig([
     sourcemap: true,
     clean: true,
     target: 'node24',
-    external: ['next', 'react', 'react-dom'],
+    external: ['next', 'react', 'react-dom', '@pkpayplus/node', '@pkpayplus/core'],
   },
 
   // 2. Client & Root entries (@pkpayplus/nextjs and @pkpayplus/nextjs/client)
@@ -26,7 +26,7 @@ export default defineConfig([
     dts: true,
     sourcemap: true,
     target: 'es2022',
-    external: ['next', 'react', 'react-dom'],
+    external: ['next', 'react', 'react-dom', '@pkpayplus/react', '@pkpayplus/core'],
     banner: {
       js: '"use client";',
     },
