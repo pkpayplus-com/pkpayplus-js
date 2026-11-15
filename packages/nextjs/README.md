@@ -24,6 +24,7 @@ pnpm add @pkpayplus/nextjs
 PKPAY_SECRET_KEY=sk_live_xxxxxx
 PKPAY_MERCHANT_ID=8f7e6d5c-xxxx-xxxx
 NEXT_PUBLIC_PKPAY_PUBLISHABLE_KEY=pk_live_xxxxxx
+NEXT_PUBLIC_APP_URL=https://your-domain.com # or http://localhost:3000 for local development
 ```
 
 ---
@@ -38,13 +39,15 @@ NEXT_PUBLIC_PKPAY_PUBLISHABLE_KEY=pk_live_xxxxxx
 import { pkpayServer } from '@pkpayplus/nextjs/server';
 
 export async function createCheckout(amount: number) {
+  const appUrl = (process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000').replace(/\/$/, '');
+
   // Automatically discovers PKPAY_SECRET_KEY and PKPAY_MERCHANT_ID from env
   const session = await pkpayServer.checkoutSessions.create({
     amount,
     currency: 'USD',
     checkout_flow: 'iframe',
-    success_url: 'https://example.com/checkout/success',
-    cancel_url: 'https://example.com/checkout/cancel',
+    success_url: `${appUrl}/checkout/success`,
+    cancel_url: `${appUrl}/checkout/cancel`,
   });
 
   return { sessionId: session.id };
