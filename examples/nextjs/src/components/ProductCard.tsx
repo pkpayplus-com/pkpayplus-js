@@ -1,7 +1,6 @@
 'use client';
 
-import { PKPayPlusButton } from '@pkpayplus/react';
-import type { Product } from '@pkpayplus/core';
+import { PKPayPlusButton, type Product } from '@pkpayplus/nextjs';
 import { createModalCheckout, createRedirectCheckout } from '@/app/actions/checkout';
 import { useState } from 'react';
 import Link from 'next/link';
