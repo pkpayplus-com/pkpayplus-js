@@ -5,6 +5,6 @@ allowBuilds:
   msw: false
 minimumReleaseAgeExclude:
   - '@pkpayplus/core@1.0.1'
-  - '@pkpayplus/nextjs@1.0.1'
+  - '@pkpayplus/nextjs@1.0.1 || 1.0.2'
   - '@pkpayplus/node@1.0.1'
   - '@pkpayplus/react@1.0.1'
