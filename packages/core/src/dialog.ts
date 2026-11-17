@@ -241,7 +241,7 @@ export function createCheckoutDialog(options: OpenDialogOptions): DialogControll
     }, 100);
   });
 
-  iframePane.appendChild(closeBtn);
+  dialog.appendChild(closeBtn);
   iframePane.appendChild(paymentHeader);
   iframePane.appendChild(cardBox);
   iframePane.appendChild(termsNotice);

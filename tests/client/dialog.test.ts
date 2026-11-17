@@ -13,6 +13,7 @@ describe('Client Dialog Controller', () => {
 
   afterEach(() => {
     globalThis.fetch = originalFetch;
+    document.body.innerHTML = '';
   });
 
   it('injects iframe overlay dialog into DOM and removes on close', () => {
@@ -27,6 +28,25 @@ describe('Client Dialog Controller', () => {
     const overlay = document.querySelector('.pkpayplus-overlay');
     expect(overlay).not.toBeNull();
 
+    // Verify close button is mounted in dialog
+    const closeBtn = document.querySelector('.pkpay-close-btn');
+    expect(closeBtn).not.toBeNull();
+
+    dialog.close();
+  });
+
+  it('triggers onCancel when close button is clicked', () => {
+    const onCancel = vi.fn();
+    const dialog = createCheckoutDialog({
+      url: 'https://checkout.pkpayplus.com?session_id=sess_test',
+      onCancel,
+    });
+
+    const closeBtn = dialog.container.querySelector('.pkpay-close-btn') as HTMLButtonElement | null;
+    expect(closeBtn).not.toBeNull();
+    closeBtn?.click();
+
+    expect(onCancel).toHaveBeenCalledTimes(1);
     dialog.close();
   });
 });

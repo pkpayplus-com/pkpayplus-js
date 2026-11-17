@@ -604,30 +604,97 @@ export function injectThemeStyles(): void {
       user-select: none;
     }
 
-    /* Responsive Breakdown */
+    /* Responsive Breakdown - Mobile (< 768px) */
     @media (max-width: 768px) {
       .pkpay-overlay {
         padding: 0;
+        align-items: stretch;
       }
 
       .pkpay-dialog {
         max-width: 100%;
+        min-height: 100%;
         height: 100%;
-        max-height: 100vh;
+        height: 100dvh;
+        max-height: 100dvh;
         border-radius: 0;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
 
       .pkpay-customer-pane {
         border-right: none;
         border-bottom: 1px solid var(--pkpay-border);
-        padding: 16px;
-        max-height: 40vh;
+        padding: 20px 16px 16px 16px;
+        max-height: none;
+        overflow-y: visible;
+        flex-shrink: 0;
+      }
+
+      .pkpay-pane-header {
+        padding-right: 42px;
       }
 
       .pkpay-form-row {
         grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .pkpay-input {
+        font-size: 16px;
+        height: 40px;
+      }
+
+      .pkpay-combobox-trigger {
+        height: 40px;
+      }
+
+      .pkpay-combobox-search-input {
+        font-size: 16px;
+        height: 36px;
+      }
+
+      .pkpay-iframe-pane {
+        overflow: visible;
+        height: auto;
+        min-height: auto;
+        padding: 16px 16px 32px 16px;
+        padding-bottom: max(32px, env(safe-area-inset-bottom));
+        flex-shrink: 0;
+      }
+
+      .pkpay-payment-header {
+        padding-right: 0;
+      }
+
+      .pkpay-submit-btn {
+        margin-top: 16px;
+        margin-bottom: 12px;
+        height: 46px;
+        font-size: 14.5px;
+      }
+
+      .pkpay-close-btn {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        width: 34px;
+        height: 34px;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+        z-index: 100;
+      }
+
+      .pkpay-customer-pane .pkpay-footer-badge {
+        margin-top: 12px;
+        padding-top: 0;
       }
     }
   `;

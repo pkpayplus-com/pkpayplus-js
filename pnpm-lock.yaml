@@ -209,8 +209,8 @@ importers:
         specifier: ^10.0.2
         version: 10.0.2(@types/react@19.3.0)(react@19.3.1)
       '@pkpayplus/nextjs':
-        specifier: ^1.0.2
-        version: 1.0.2(next@16.4.6(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: ^1.0.3
+        version: 1.0.3(next@16.4.6(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1185,24 +1185,24 @@ packages:
   '@open-draft/until@2.1.0':
     resolution: {integrity: sha512-U69T3ItWHvLwGg5eJ0n3I62nWuE6ilHlmz7zM0npLBRvPRd7e6NYmg54vvRtP5mZG7kZqZCFVdsTWo7BPtBujg==}
 
-  '@pkpayplus/core@1.0.1':
-    resolution: {integrity: sha512-XflusLA99aHmwhBG4U6gKNMrnXHf1XiIpdqcEMfUTQiW34N7KfozIWFibRBeN3rdUICRju4uED1omFliuxw8UA==}
+  '@pkpayplus/core@1.0.2':
+    resolution: {integrity: sha512-KN6jyAAew1P5qL4Q16FWwlpOy+845971Dqm4S1VFp5zThxIp1/bPpqu6RFSNIxpWwzbwd8aSTKV/34VJuUi5Iw==}
     engines: {node: '>=24.0.0'}
 
-  '@pkpayplus/nextjs@1.0.2':
-    resolution: {integrity: sha512-jVPcQ06KGKB++9paESz//jWpCskoRTdd5Whz2xHhMTwC57J3sUZYw/LPF8/FanHMDz8qMwQ2pw5IddzhC11JeQ==}
+  '@pkpayplus/nextjs@1.0.3':
+    resolution: {integrity: sha512-efgvRfHHA0/AkRLzMTaPlReFDm3EH24bNl4VfVIgEI9cCDgfukCHgYAM/M4XTXy2NMMdW7FDmNdK2RXDtBxbgw==}
     engines: {node: '>=24.0.0'}
     peerDependencies:
       next: '>=15.0.0 || >=16.0.0'
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@pkpayplus/node@1.0.1':
-    resolution: {integrity: sha512-1KqRXhFvoa0kGixAJB+XuSzjSDPBQ6dIpHscVoIRbnZdZQuziXwAsvgHtLycB5Vm3abC9HiTny02BukkrYHY/A==}
+  '@pkpayplus/node@1.0.2':
+    resolution: {integrity: sha512-WnwvEAP9pqXP22Jlrey7+ypq4ro0L4PuJlTWeotv90tniQSLlj/Je6V6dmr3JF729y0IOLZn08+WWW2EE02E0g==}
     engines: {node: '>=24.0.0'}
 
-  '@pkpayplus/react@1.0.1':
-    resolution: {integrity: sha512-Zu+pJWBTfupXoKnSRRdcWlDIvAcRqDq4i92Q6srG7QMGtNCIWUiWuil1Fxsthb2lKXusT+BY7g4Tk7nQ8rov4A==}
+  '@pkpayplus/react@1.0.2':
+    resolution: {integrity: sha512-6/AW5+SNQfqcTzUZ6tJ9HOdcKlY3B8cPhaeNFaN8Yh9BRtw567KBndUm4pnjl0XgN94k2P6UmVA2paqkUFtqrA==}
     engines: {node: '>=24.0.0'}
     peerDependencies:
       react: ^19.0.0
@@ -2836,24 +2836,24 @@ snapshots:
   '@open-draft/until@2.1.0':
     optional: true
 
-  '@pkpayplus/core@1.0.1': {}
+  '@pkpayplus/core@1.0.2': {}
 
-  '@pkpayplus/nextjs@1.0.2(next@16.4.6(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@pkpayplus/nextjs@1.0.3(next@16.4.6(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
-      '@pkpayplus/core': 1.0.1
-      '@pkpayplus/node': 1.0.1
-      '@pkpayplus/react': 1.0.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      '@pkpayplus/core': 1.0.2
+      '@pkpayplus/node': 1.0.2
+      '@pkpayplus/react': 1.0.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       next: 16.4.6(@types/node@22.20.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
 
-  '@pkpayplus/node@1.0.1':
+  '@pkpayplus/node@1.0.2':
     dependencies:
-      '@pkpayplus/core': 1.0.1
+      '@pkpayplus/core': 1.0.2
 
-  '@pkpayplus/react@1.0.1(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
+  '@pkpayplus/react@1.0.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)':
     dependencies:
-      '@pkpayplus/core': 1.0.1
+      '@pkpayplus/core': 1.0.2
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
 
