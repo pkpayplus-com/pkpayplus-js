@@ -4,8 +4,9 @@ import { usePKPayPlus } from '../usePKPayPlus';
 export interface PKPayPlusButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   createSessionEndpoint?: string;
   onSessionCreate?: () => Promise<{ iframe_url: string; session_id?: string }>;
-  buttonText?: string;
-  loadingText?: string;
+  buttonText?: React.ReactNode;
+  loading?: React.ReactNode;
+  loadingText?: React.ReactNode;
   onSuccess?: (data: { sessionId: string; [key: string]: unknown }) => void;
   onCancel?: () => void;
   onError?: (error: unknown) => void;
@@ -15,7 +16,8 @@ export function PKPayPlusButton({
   createSessionEndpoint,
   onSessionCreate,
   buttonText = 'Pay with PKPay+',
-  loadingText = 'Preparing checkout...',
+  loading,
+  loadingText,
   onSuccess,
   onCancel,
   onError,
@@ -23,6 +25,7 @@ export function PKPayPlusButton({
   className,
   style,
   onClick,
+  children,
   ...restProps
 }: PKPayPlusButtonProps): React.JSX.Element {
   const { openDialog } = usePKPayPlus();
@@ -84,6 +87,8 @@ export function PKPayPlusButton({
     <button
       type="button"
       disabled={disabled || isLoading}
+      aria-busy={isLoading}
+      data-loading={isLoading ? '' : undefined}
       onClick={handleClick}
       className={className}
       style={{
@@ -103,7 +108,7 @@ export function PKPayPlusButton({
       }}
       {...restProps}
     >
-      {isLoading ? loadingText : buttonText}
+      {isLoading ? (loading ?? loadingText ?? 'Preparing checkout...') : (children ?? buttonText)}
     </button>
   );
 }
