@@ -120,7 +120,6 @@ export function ProductCard({ product }: { product: ExtendedProduct }) {
         <div className="grid gap-2">
           <PKPayPlusButton
             buttonText="Embeded Checkout"
-            loading={<Loader2 className="size-4 animate-spin" />}
             loading={<Loader2 className="h-4 w-4 animate-spin" />}
             className={cn(
               buttonVariants({ variant: 'default', size: 'default' })
