@@ -13,7 +13,7 @@
   "dependencies": {
     "@base-ui/react": "^1.9.0",
     "@daypicker/react": "^10.0.2",
-    "@pkpayplus/nextjs": "^1.0.3",
+    "@pkpayplus/nextjs": "^1.0.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cn": "^0.5.2",
