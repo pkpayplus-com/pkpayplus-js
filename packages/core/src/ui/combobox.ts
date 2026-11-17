@@ -184,10 +184,22 @@ export function createCountryCombobox(options: ComboboxOptions): ComboboxControl
   });
 
   searchInput.addEventListener('input', () => {
-    const q = searchInput.value.toLowerCase().trim();
-    filteredCountries = countryList.filter(
-      (c) => c.name.toLowerCase().includes(q) || c.code.toLowerCase().includes(q)
-    );
+    const rawQ = searchInput.value.toLowerCase().trim();
+    if (!rawQ) {
+      filteredCountries = [...countryList];
+    } else {
+      const normQ = rawQ.replace(/gh/g, 'g').replace(/ph/g, 'f');
+      filteredCountries = countryList.filter((c) => {
+        const nameLower = c.name.toLowerCase();
+        const normName = nameLower.replace(/gh/g, 'g').replace(/ph/g, 'f');
+        return (
+          nameLower.includes(rawQ) ||
+          c.code.toLowerCase().includes(rawQ) ||
+          normName.includes(normQ) ||
+          Boolean(c.aliases && c.aliases.some((a) => a.toLowerCase().includes(rawQ)))
+        );
+      });
+    }
     highlightedIndex = 0;
     renderItems();
   });
