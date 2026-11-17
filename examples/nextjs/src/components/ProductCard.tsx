@@ -4,6 +4,7 @@ import { PKPayPlusButton, type Product } from '@pkpayplus/nextjs';
 import { createModalCheckout, createRedirectCheckout } from '@/app/actions/checkout';
 import { useState } from 'react';
 import Link from 'next/link';
+import { Loader2 } from 'lucide-react';
 import {
   Frame,
   FramePanel,
@@ -71,7 +72,7 @@ export function ProductCard({ product }: { product: ExtendedProduct }) {
             <img
               src={product.cover_url}
               alt={product.name}
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-full object-cover  transition-transform duration-300 hover:scale-105"
             />
           ) : (
             <span className="text-4xl text-muted-foreground/40 select-none">📦</span>
@@ -116,9 +117,11 @@ export function ProductCard({ product }: { product: ExtendedProduct }) {
         </div>
 
         {/* Dual Checkout Buttons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+        <div className="grid gap-2">
           <PKPayPlusButton
-            buttonText="Inline Checkout"
+            buttonText="Embeded Checkout"
+            loading={<Loader2 className="size-4 animate-spin" />}
+            loading={<Loader2 className="h-4 w-4 animate-spin" />}
             className={cn(
               buttonVariants({ variant: 'default', size: 'default' })
             )}
