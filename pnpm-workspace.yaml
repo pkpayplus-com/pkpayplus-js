@@ -5,7 +5,7 @@ allowBuilds:
   esbuild: false
   msw: false
 minimumReleaseAgeExclude:
-  - '@pkpayplus/core@1.0.1 || 1.0.2'
-  - '@pkpayplus/nextjs@1.0.1 || 1.0.2 || 1.0.3'
-  - '@pkpayplus/node@1.0.1 || 1.0.2'
-  - '@pkpayplus/react@1.0.1 || 1.0.2'
+  - '@pkpayplus/core@1.0.1 || 1.0.2 || 1.0.3'
+  - '@pkpayplus/nextjs@1.0.1 || 1.0.2 || 1.0.3 || 1.0.4'
+  - '@pkpayplus/node@1.0.1 || 1.0.2 || 1.0.3'
+  - '@pkpayplus/react@1.0.1 || 1.0.2 || 1.0.3'

@@ -1,6 +1,6 @@
 {
   "name": "@pkpayplus/nextjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Official PKPay+ Next.js App Router SDK with Server Actions and Route Handlers",
   "publishConfig": {
     "access": "public"
